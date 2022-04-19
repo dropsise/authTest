@@ -1,0 +1,53 @@
+
+
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .content {
+        margin-top: $m;
+        padding: $xxl;
+        border: 1px solid $textLight;
+        border-radius: 5px;
+        display: grid;
+        row-gap: $m;
+        .img { width: 100px; justify-self: center; }
+        .data {
+            display: grid;
+            text-align: center;
+            color: $title;
+            .name { font-size: $l; font-weight: $medium; }
+            .birthday { font-size: $s; }
+            .online {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: $xxs;
+                font-size: xs;
+                .dot { 
+                    width: $xxs;
+                    height: $xxs;
+                    border-radius: $circle;
+                    background-color: $validation;
+                }
+            }
+        }
+        .logout {
+            display: flex;
+            justify-content: center;
+            .btn {
+                color: $white;
+                padding: $xxs $l;
+                border-radius: 5px;
+                background-color: $warning;
+            }
+        }
+    }
+}
+
+

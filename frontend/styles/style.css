@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #6c757d;
+  background-color: #cae9ff;
+}
+
+h1, h2, h3 {
+  color: #343a40;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: auto;
+}
+
+button, input {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 768px;
+  margin: 0 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    margin: 0 auto;
+  }
+}
+
+.login {
+  background-color: #0077b6;
+}
+
+.login .form {
+  padding: 12px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr max-content;
+      grid-template-columns: 1fr 1fr -webkit-max-content;
+      grid-template-columns: 1fr 1fr max-content;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+@media only screen and (min-width: 540px) {
+  .login .form {
+    max-width: 540px;
+  }
+}
+
+.login .form .field {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 16px 1fr 16px;
+      grid-template-rows: 16px 1fr 16px;
+  row-gap: 8px;
+}
+
+.login .form .field .label {
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+.login .form .field .input {
+  font-size: 12px;
+  background-color: #FFFFFF;
+  padding: 8px;
+  width: 100%;
+}
+
+.login .form .field .forgot_password {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 10px;
+  color: #adb5bd;
+}
+
+.login .form .btn {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 8px;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+  background-color: #0386cc;
+  color: #FFFFFF;
+}
+
+@media only screen and (min-width: 540px) {
+  .register {
+    max-width: 540px;
+  }
+}
+
+.register .head__section {
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+.register .head__section .title {
+  font-size: m;
+  font-weight: 700;
+}
+
+.register .head__section .subtitle {
+  font-size: 16px;
+}
+
+.register .form .field {
+  margin: 12px 0;
+  display: -ms-grid;
+  display: grid;
+}
+
+.register .form .field .field__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+}
+
+.register .form .field .label {
+  color: #343a40;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.register .form .field .input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #adb5bd;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+.register .form .field .input[type=date] {
+  margin-top: 12px;
+}
+
+.register .form .field .gender_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 16px;
+          column-gap: 16px;
+  color: #343a40;
+  font-weight: 600;
+}
+
+.register .form .field .btn {
+  color: #FFFFFF;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+  justify-self: flex-start;
+  background-color: #2b9348;
+}
+
+.register .form .cgu {
+  width: 250px;
+  font-size: 8px;
+}
+
+@media only screen and (min-width: 540px) {
+  .register .form .cgu {
+    width: 450px;
+    font-size: 10px;
+  }
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home .content {
+  margin-top: 16px;
+  padding: 30px;
+  border: 1px solid #adb5bd;
+  border-radius: 5px;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 16px;
+}
+
+.home .content .img {
+  width: 100px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.home .content .data {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+  color: #343a40;
+}
+
+.home .content .data .name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.home .content .data .birthday {
+  font-size: 12px;
+}
+
+.home .content .data .online {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+  font-size: xs;
+}
+
+.home .content .data .online .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  background-color: #81b29a;
+}
+
+.home .content .logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home .content .logout .btn {
+  color: #FFFFFF;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background-color: #e07a5f;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,66 @@
+
+
+.register {
+    //background-color: #cae9ff;
+    @include view(tablet) {
+        max-width: 540px;
+    }
+    .head__section {
+        margin-top: $xxl;
+        margin-bottom: $m;
+        .title { font-size: m; font-weight: $bold; }
+        .subtitle { font-size: $m; }
+    }
+    .form {
+        .field {
+            margin: $s 0;
+            display: grid;
+            .field__name {
+                display: flex;
+                column-gap: $xxs;
+            }
+            .label {
+                color: $title;
+                font-weight: $medium;
+                font-size: $s;
+            }
+            .input { 
+                width: 100%; 
+                padding: $xxs;
+                border: 1px solid $textLight;
+                border-radius: 5px;
+                background-color: $white; 
+                &[type=date] { margin-top: $s; }
+            }
+            .gender_section {
+                display: flex;
+                align-items: center;
+                column-gap: $m;
+                color: $title;
+                font-weight: $medium;
+            }
+            .btn {
+                color: $white;
+                width: fit-content;
+                padding: $xxs $xxl;
+                font-size: $m;
+                font-weight: $medium;
+                border: 1px solid $text;
+                border-radius: 5px;
+                justify-self: flex-start;
+                background-color: $secondary;
+            }
+        }
+        .cgu {
+            width: 250px;
+            font-size: $xxs;
+            @include view(tablet) {
+                width: 450px;
+                font-size: $xs;
+            }
+        }
+    }
+}
+
+
+
