@@ -1,9 +1,14 @@
 
+// instance de axios pour effectuer des requetes http
 const Axios = axios.create({
     baseURL: 'http://localhost/stage/backend/',
 })
 
-// On click on the Sign In button
+/**
+ * Connexion d'un utilisateur
+ * @param {object} user 
+ * @returns {object} 
+ */
 async function loginUser(user) {
     // Sending the user Login request
     try {
@@ -17,7 +22,11 @@ async function loginUser(user) {
     }
 }
 
-  // On click on the Sign Up button
+/**
+ * Inscription d'un utilisateur
+ * @param {object} user 
+ * @returns {object} 
+ */
 async function registerUser(user) {
     try {
         // Sending the user registration request
@@ -35,7 +44,11 @@ async function registerUser(user) {
     }
 }
 
-// On Click the Log out button
+/**
+ * Déconnexion d'un utilisateur
+ * @param {object} user 
+ * @returns {object} 
+ */
 async function logoutUser() {
     try {
         const loginToken = localStorage.getItem('loginToken');
@@ -50,7 +63,11 @@ async function logoutUser() {
     }
 }
 
-// Checking user logged in or not
+/**
+ * Authentification d'un utilisateur
+ * @param {object} user 
+ * @returns {object} 
+ */
 async function loggedInCheck() {
     try {
         const loginToken = localStorage.getItem('loginToken');

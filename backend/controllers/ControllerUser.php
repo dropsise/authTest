@@ -1,7 +1,9 @@
 <?php
 require_once './tokens/middlewares/Auth.php';
 require_once './controllers/Controller.php';
-
+/**
+ * Gère les service liés au utilisateur
+ */
 class ControllerUser extends Controller
 {
     public function __construct($url) {

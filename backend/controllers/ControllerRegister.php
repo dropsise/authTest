@@ -20,7 +20,6 @@ class ControllerRegister extends Controller
      * 
      * @throws Exception
      * 
-     * @uses hydrate
      * @uses register
      * @uses msgErr
      */

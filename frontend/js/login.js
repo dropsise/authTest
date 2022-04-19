@@ -1,6 +1,7 @@
 import utils from "./utils.js"
 import { loginUser, loggedInCheck } from './user.js'
 
+// Les données de l'utilisateur
 var userInfo = {
     email: '',
     password: '',
@@ -10,7 +11,9 @@ var login = document.querySelector('.login')
 var loginForm = login.querySelector('.form')
 var inputField = login.querySelectorAll('.field .input')
 
-// Verifie si un utilisateur est déja authentifié
+/**
+ * Verifie si un utilisateur est déja authentifié
+ */
 window.onload = async () => {
     const data = await loggedInCheck()
     if (data && data.success) {
@@ -18,8 +21,9 @@ window.onload = async () => {
     }
 }
 
+//
 loginForm.onsubmit = handlerSubmit
-
+//
 inputField.forEach(e => e.onkeyup = handleChange)
 
 /**
@@ -51,7 +55,7 @@ function handleChange(e) {
 }
 
 /**
- * 
+ * Vérifie si les informations de l'utilisateur sont valides
  * @returns {boolean}
  */
  function isEnableSignIn() {
@@ -64,7 +68,7 @@ function handleChange(e) {
 }
 
 /**
- * 
+ * Met à jour les données de l'utilisateur
  * @param {object} data 
  */
 function setUserInfo(data) {
