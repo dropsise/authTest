@@ -18,7 +18,7 @@ async function loginUser(user) {
         })
         return data
     } catch(err) {
-        console.log(error)
+        console.log(err)
     }
 }
 
@@ -59,7 +59,7 @@ async function logoutUser() {
         // let's remove loginToken & user 
         localStorage.removeItem('loginToken');
     } catch(err) {
-        console.log(error)
+        console.log(err)
     }
 }
 
@@ -80,7 +80,7 @@ async function loggedInCheck() {
             return data;
         }
     } catch(err) {
-        console.log(error)
+        console.log(err)
     }
 }
 
