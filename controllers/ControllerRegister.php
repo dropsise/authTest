@@ -40,7 +40,7 @@ class ControllerRegister
             // Générer la vue
             $this->_view->generate($this->_returnData);
         } catch (Exception $e) {
-            $this->_returnData = $this->msgErr(false,$e->getCode(),$e->getMessage(), $data);
+            $this->_returnData = $this->msgErr($e->getMessage(), $data);
             // Générer la vue
             $this->_view->generate($this->_returnData); 
         }
@@ -159,10 +159,8 @@ class ControllerRegister
      * 
      * @return array Un tableau qui représent les données à générer
      */
-    private function msgErr($success, $status, $message, $data) {
+    private function msgErr($message, $data) {
         return array(
-            'success' => $success,
-            'status' => $status,
             'message' => $message,
             'register' => $data
         );

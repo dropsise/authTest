@@ -40,7 +40,7 @@ class ControllerLogin
             // Générer la vue
             $this->_view->generate($this->_returnData);
         } catch (Exception $e) {
-            $this->_returnData = $this->msgErr(false,$e->getCode(),$e->getMessage(), $data);
+            $this->_returnData = $this->msgErr($e->getMessage(), $data);
             // Générer la vue
             $this->_view->generate($this->_returnData); 
         }
@@ -125,10 +125,8 @@ class ControllerLogin
      * 
      * @return array Un tableau qui représent les données à afficher
      */
-    protected function msgErr($success, $status, $message, $data) {
+    protected function msgErr($message, $data) {
         return array(
-            'success' => $success,
-            'status' => $status,
             'message' => $message,
             'login' => $data
         );

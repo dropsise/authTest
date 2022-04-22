@@ -1,14 +1,19 @@
 <?php
-
 require_once './views/View.php';
 
 /**
+ * Le Router permet d'utiliser le service souhaité selon l'url
  * 
+ * PHP version 5
+ * 
+ * @category Routeur
+ * @package  controllers
+ * @author   Georgy Guei <gettien98@gmail.com>
  */
 class Router
 {
     /**
-     * La requête 
+     * Démarage de la requête
      */
     public function routeReq() {
         try {

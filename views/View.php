@@ -1,21 +1,46 @@
 <?php
 
+/**
+ * La vue permet d'afficher un rendu de la page
+ * 
+ * PHP version 5
+ * 
+ * @category Vue
+ * @package  views
+ * @author   Georgy Guei <gettien98@gmail.com>
+ */
 class View
 {
-    // CONSTRUCTEUR
+    /**
+     * Constructeur
+     */
     public function __construct($section=null) {
         if (isset($section)):
             $this->_file = './views/view'.$section.'.php';
         endif;
     }
-    // GENERER ET AFFICHER LA VUE
+    /**
+     * Générer et afficher la vue
+     * 
+     * @param array $data Les données à ajouter au fichier généré
+     * 
+     * @throws Exception
+     */
     public function generate($data=array()) {
         // Création de la vue
         $view = $this->generateFile($data);
         echo $view;
     }
 
-    // GENERER UN FICHIER VUE
+    /**
+     * Générer un fichier vue avec des données
+     * 
+     * @param array $data Les données à ajouter au fichier généré
+     * 
+     * @return string un fichier vue
+     * 
+     * @throws Exception
+     */
     private function generateFile($data) {
         if (file_exists($this->_file)):
             // Importer les données passées en paramètre dans le fichier vue
