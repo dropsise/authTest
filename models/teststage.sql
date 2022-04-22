@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 19 Avril 2022 à 13:56
+-- Généré le :  Ven 22 Avril 2022 à 13:12
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -31,17 +31,16 @@ CREATE TABLE `users` (
   `name` varchar(30) COLLATE utf8_bin NOT NULL,
   `email` varchar(255) COLLATE utf8_bin NOT NULL,
   `password` varchar(255) COLLATE utf8_bin NOT NULL,
-  `online` tinyint(1) NOT NULL,
   `gender` tinyint(4) NOT NULL,
-  `birthday` timestamp NULL DEFAULT NULL
+  `birthdate` varchar(10) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `online`, `gender`, `birthday`) VALUES
-(1071423390, 'Albert Snow', 'albert@gmail.com', '$2y$10$QxkKfKlKn.dk7LlqJlZc1ul3OXsuXAF5uY1xVHMeWBiRXguT6ye8G', 0, 0, '2022-04-07 22:00:00');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `gender`, `birthdate`) VALUES
+(420204535, 'Albert Dumas', 'albert@gmail.com', '$2y$10$P9OXWh85sA7SImGabl083.RhNrWXoKmeijpapr0ViCVNbaLuPyZue', 1, '1990-03-14');
 
 --
 -- Index pour les tables exportées

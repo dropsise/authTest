@@ -2,22 +2,19 @@
 
 require_once './views/View.php';
 
+/**
+ * 
+ */
 class Router
 {
-    // ROUTE REQUETE
+    /**
+     * La requête 
+     */
     public function routeReq() {
-        
         try {
-            // CHARGEMENT AUTOMATIQUE DES CLASSES DE MODELS
-            spl_autoload_register( function($class) {
-                if (file_exists('./models/'.$class.'.php')):
-                    require_once './models/'.$class.'.php';
-                endif;
-            }); 
             $url = '';
-
             if (isset($_GET['url'])) :
-                // LE CONTROLLEUR EST INCLUS SELON L'ACTION DE L'UTILISATEUR
+                // Le controlleur est inclus selon l'action de l'utilisateur
                 $url = explode('/', filter_var($_GET['url'], FILTER_SANITIZE_URL));
                 $controller = ucfirst(strtolower($url[0]));
                 $controllerClass = 'Controller'.$controller;
@@ -28,9 +25,12 @@ class Router
                 else :
                     throw new Exception('Page introuvable', 404);
                 endif;
+            else:
+                $this->_view = new View('Connexion');
+                $this->_view->generate();
             endif;
         } catch (Exception $e) {
-            // GESTION DES ERREURS
+            // Gestion des érreurs
             $this->_view = new View();
             $this->_view->generate(array(
                 'success' => false,
@@ -40,8 +40,8 @@ class Router
         }
     }
 
-    // LE CONTROLEUR
+    // Le controlleur
     private $_ctrl;
-    // LA VUE
+    // La vue
     private $_view;
 }

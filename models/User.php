@@ -30,14 +30,11 @@ class User implements JsonSerializable {
     public function setPassword($password) {
         $this->password = (string) $password;
     }
-    public function setBirthday($birthday) {
-        $this->birthday = $birthday;
+    public function setBirthdate($birthdate) {
+        $this->birthdate = $birthdate;
     }
     public function setGender($gender) {
-        $this->gender = (int) $gender;
-    }
-    public function setOnline($online) {
-        $this->online = (int) $online;
+        $this->gender = $gender == 1 ? 'Homme' : 'Femme';
     }
 
     //GETTERS
@@ -53,15 +50,13 @@ class User implements JsonSerializable {
     public function password() {
         return $this->password;
     }
-    public function birthday() {
-        return $this->birthday;
+    public function birthdate() {
+        return $this->birthdate;
     }
     public function gender() {
         return $this->gender;
     }
-    public function online() {
-        return $this->online;
-    }
+
 
     public function jsonSerialize()
     {
@@ -78,9 +73,8 @@ class User implements JsonSerializable {
     private $password;
     private $name;
     private $email;
-    private $birthday;
+    private $birthdate;
     private $gender;
-    private $online;
 }
 
 

@@ -5,35 +5,32 @@ class View
     // CONSTRUCTEUR
     public function __construct($section=null) {
         if (isset($section)):
-            $this->_file = 'views/view'.$section.'.php';
+            $this->_file = './views/view'.$section.'.php';
         endif;
     }
     // GENERER ET AFFICHER LA VUE
-    public function generate($data) {
-        //http_response_code($data['status']);
-        // CREATION DE LA VUE
-        // if (!isset($data['message'])):
-        //     $data = $this->generateFile($data);
-        // endif;
-        echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); 
+    public function generate($data=array()) {
+        // Création de la vue
+        $view = $this->generateFile($data);
+        echo $view;
     }
 
     // GENERER UN FICHIER VUE
     private function generateFile($data) {
         if (file_exists($this->_file)):
-            // IMPORTATION DES DONNEES PASSEES EN PARAMETRE DANS LE FICHIER VUE 
+            // Importer les données passées en paramètre dans le fichier vue
             extract($data);
-            // MISE EN TEMPON
+            // Mise en tempon
             ob_start();
             require_once $this->_file;
             return ob_get_clean();
-            // FIN DE LA TEMPORISATION
+            // Fin de la temporisation
         else:
             throw new Exception('Page introuvable', 404);
         endif;
     }
 
+    // Le fichier vue
     private $_file;
-    private $_title;
 
 }
