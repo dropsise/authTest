@@ -13,7 +13,7 @@
         <span class="msg"><?= isset($message) ? $message : '' ?></span>
         <!-- CONNEXION -->
         <div class="login">
-            <form action="http://localhost/backend/index.php?url=login" method="post" class="form container">
+            <form action="http://localhost/index.php?url=login" method="post" class="form container">
                 <div class="field">
                     <label class="label">Adresse e-mail ou mobile </label>
                     <input name="email" value="<?= isset($login->email) ? $login->email : '' ?>" class="input" type="text" placeholder="Votre login" />
@@ -36,7 +36,7 @@
                 <h2 class="title">Inscription</h2>
                 <h3 class="subtitle">C'est gratuit (et ça le restera toujours)</h3>
             </div>
-            <form action="http://localhost/backend/index.php?url=register" method="post" class="form">
+            <form action="http://localhost/index.php?url=register" method="post" class="form">
                 <div class="field">
                     <div class="field__name">
                         <input name="firstname" value="<?= isset($register->firstname) ? $register->firstname : '' ?>" type="text" placeholder="Prénom" class="input" />
