@@ -55,6 +55,8 @@ class ControllerRegister
         // Instance de gestionnaire de model pour `Utilisateur`
         $this->_manager = new UserManager();
 
+        var_dump($this->_data); die();
+
         // Récuperer les données de l'utilisateur depuis la base de donnée via son email
         $user = $this->_manager->getUser($this->_data->email);
 
