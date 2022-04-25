@@ -103,12 +103,9 @@ class ControllerLogin
         $password_pattern = "/.{4}$/";
         $tel_pattern = "/^[0-9]{10}$/";
         
-        // Vérification du format du numéro de téléphone (10 chiffres)
-        if (preg_match($tel_pattern, $email) == 0):
-            // Vérification du format de l'email
-            if (preg_match($email_pattern, $email) == 0):
-                throw new Exception($email.' - n\'est pas un email valide!', 422);
-            endif;
+        // Vérification du format du numéro de téléphone (10 chiffres) et du format de l'email
+        elseif (preg_match($tel_pattern, $email) == 0 && preg_match($email_pattern, $email) == 0):
+            throw new Exception($email.' - n\'est pas un email valide!', 422);
         // vérification du mot de passe (longueur > 4)
         elseif (preg_match($password_pattern, $password) == 0):
             throw new Exception('Votre mot de passe doit contenir au moins 4 caractères', 422);

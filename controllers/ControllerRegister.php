@@ -55,8 +55,6 @@ class ControllerRegister
         // Instance de gestionnaire de model pour `Utilisateur`
         $this->_manager = new UserManager();
 
-        var_dump($this->_data); die();
-
         // Récuperer les données de l'utilisateur depuis la base de donnée via son email
         $user = $this->_manager->getUser($this->_data->email);
 
@@ -135,12 +133,9 @@ class ControllerRegister
         // vérification du nom (format : alphabétique)
         elseif (preg_match($name_pattern, $lastname) != 0):
             throw new Exception('Votre nom doit être alphabétique!');
-        // Vérification du format du numéro de téléphone (10 chiffres)
-        elseif (preg_match($tel_pattern, $email) == 0):
-            // Vérification du format de l'email
-            if (preg_match($email_pattern, $email) == 0):
-                throw new Exception($email.' - n\'est pas un email valide!', 422);
-            endif;
+        // Vérification du format du numéro de téléphone (10 chiffres) et du format de l'email
+        elseif (preg_match($tel_pattern, $email) == 0 && preg_match($email_pattern, $email) == 0):
+            throw new Exception($email.' - n\'est pas un email valide!', 422);
         // Vérification de la confirmation de l'email
         elseif ($email != $email_check):
             throw new Exception('L\'e-mail de confirmation est incorrect!', 422);
