@@ -52,7 +52,6 @@ class ControllerRegister
      * @throws Exception
      */
     private function register() {
-        echo date('Y-m-d h:i:s', strtotime($this->_data->birthdate));
         // Instance de gestionnaire de model pour `Utilisateur`
         $this->_manager = new UserManager();
 
